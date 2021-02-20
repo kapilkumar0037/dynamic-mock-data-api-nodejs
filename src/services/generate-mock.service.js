@@ -17,10 +17,10 @@ const generateMockData = function (keyword, noOfRows, noOfColumns) {
 const generateMockDataBasedOnInput = function (reqBody) {
     const keyword = reqBody.hasOwnProperty('keyword') ? reqBody.keyword : 'user';
     const rows = reqBody.hasOwnProperty('rows') ? reqBody.rows : 50;
-    const columns = reqBody.hasOwnProperty('rows') ? reqBody.columns : 5;
+    const cols = reqBody.hasOwnProperty('rows') ? reqBody.cols : 5;
     let columnNames = reqBody.hasOwnProperty('columnNames') ? reqBody.columnNames : [];
 
-    generateColumns(columns, columnNames, keyword);
+    generateColumns(cols, columnNames, keyword);
     const response = [];
     for (let i = 0; i < rows; i++) {
         const data = {};
